@@ -1,0 +1,48 @@
+﻿@model FormModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to FIZZBUZZ!</h1>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.Label("Length")
+    @Html.TextBox("lengthBox")
+    <p>
+        Please enter a number. If anything else is entered, the FizzBuzz run will default to a running of 1 - 100.
+    </p>
+    <table>
+        <tr>
+            <td>
+                @Html.Label("Fuzz")
+                @Html.CheckBox("fuzzBox")
+                @Html.Label("Jazz")
+                @Html.CheckBox("jazzBox")
+                @Html.Label("Backwards")
+                @Html.CheckBox("backwardsBox")
+            </td>
+        </tr>
+    </table>
+    <div>
+        <input type="submit" value="FIZZBUZZ!" />
+    </div>
+}
+
+@if (Model != null)
+{
+<div>
+    @foreach(var result in Model.Results)
+    {
+        <div>
+            @result
+        </div>
+    }
+</div>
+}
+
+
+
