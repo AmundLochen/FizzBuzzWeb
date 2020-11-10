@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace FizzBuzz
 {
-    public class FizzBuzzService
+    public class FizzBuzzService : IFizzBuzzService
     {
         public int Length {get; set;}
         public bool Fuzz { get; set; }
